@@ -1,4 +1,4 @@
-## French Game Code ##
+## French Game Code - Lucas Makaya Goma and Faith Boyd ##
 
 import random, subprocess, sys
 
