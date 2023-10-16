@@ -1,18 +1,19 @@
 """
 Made by Vighnesh Koikal and Luke Oliver 10/13/23
+Spanish module containg functions for quiz and questions
 """
 
 import random, subprocess, sys
 
-# Instantiate variables that will be used globally
+# Instantiate variables that will be used globally - LWO & VK
 score = 0
 missed_questions = []
 
-# Get user's operating system
+# Get user's operating system - LWO
 os = sys.platform
 
 def Spanish():
-    ### --- Setup --- ###
+    ### --- Setup --- ### - VK
     questions = [BlueQuestion, RedQuestion, GreenQuestion, YellowQuestion, PurpleQuestion, BrownQuestion, OrangeQuestion, BlackQuestion, WhiteQuestion, PinkQuestion]
     run = True
     retake = ""
@@ -20,7 +21,7 @@ def Spanish():
     global score
     global missed_questions
     
-    ### --- Teach the user --- ###
+    ### --- Teach the user --- ### - LWO
     print("Welcome to the spanish section.\n ")
     input("Colors in spanish are a little different than colors in English. Press ENTER to continue...")
     print("A lot of colors have direct translation, such as: ")
@@ -45,49 +46,50 @@ def Spanish():
     input("Press ENTER to continue...")
     print("Take a minute to familiarize yourself with these terms. ")
     
-    ### --- Quiz Loop --- ###
+    ### --- Quiz Loop --- ### - LWO & VK
     while run:
         
-        # Clear terminal (dependant on user's operating system) so that the user cannot cheat
+        # Clear terminal (dependant on user's operating system) so that the user cannot cheat - LWO
         input("Press enter when you are ready to begin your quiz! ")
         if os == "win32":
             subprocess.run('cls', shell=True)
         elif os == "darwin" or os == "linux":
             subprocess.run('clear', shell=True)
         
-        # Reset score and missed questions after each quiz
+        # Reset score and missed questions after each quiz - LWO & VK
         missed_questions = []
         score = 0
         
-        # Give user character info
+        # Give user character info - LWO
         print("Note that special symbols are not available and should not be used in this program.\n")
         
-        # Shuffle the order of questions
+        # Shuffle the order of questions - LWO
         random.shuffle(questions)
         
         # Ask each question in the order of the shuffled list by itterating 
         # through the list (which contains function names) and calling the
-        # function based on the index of the list and the iteration
+        # function based on the index of the list and the iteration - LWO
         for question in range(len(questions)):
             questions[question](question + 1)
         
-        # Print final score
+        # Print final score - LWO
         print("Your final score was... " + str(score) + "/10! ")
         
-        # Print missed questions
+        # Print missed questions - LWO
         if score < 10:
             print("\nYou missed the following questions: ")
             for missed_question in range(len(missed_questions)):
                 print(str(missed_questions[missed_question]))
         
         # Ask the user if they would like to retake the quiz, and break
-        # the main loop if they would not like to retake
+        # the main loop if they would not like to retake - VK
         retake = str(input("\nWould you like to retake the quiz? ")).lower()
         if retake == "yes" or retake == "y" :
             continue
         else:
             run = False
-
+            
+# Function for blue question - LWO
 def BlueQuestion(question_number):
     # Global score variable
     global score
@@ -108,7 +110,8 @@ def BlueQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for red question - VK
 def RedQuestion(question_number):
     # Global score variable
     global score
@@ -129,7 +132,8 @@ def RedQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for green question - LWO
 def GreenQuestion(question_number):
     # Global score variable
     global score
@@ -150,7 +154,8 @@ def GreenQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for yellow question - VK
 def YellowQuestion(question_number):
     # Global score variable
     global score
@@ -172,7 +177,8 @@ def YellowQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for purple question - VK
 def PurpleQuestion(question_number):
     # Global score variable
     global score
@@ -195,6 +201,7 @@ def PurpleQuestion(question_number):
     # Create whitespace
     print()
     
+# Function for brown question - LWO
 def BrownQuestion(question_number):
     # Global score variable
     global score
@@ -220,7 +227,8 @@ def BrownQuestion(question_number):
         
     # Create whitespace
     print()
-
+    
+# Function for orange question - VK
 def OrangeQuestion(question_number):
     # Global score variable
     global score
@@ -246,7 +254,8 @@ def OrangeQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for black question - VK
 def BlackQuestion(question_number):
     # Global score variable
     global score
@@ -272,7 +281,8 @@ def BlackQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for white question - VK
 def WhiteQuestion(question_number):
     # Global score variable
     global score
@@ -298,7 +308,8 @@ def WhiteQuestion(question_number):
         
     # Create whitespace
     print()
-    
+
+# Function for pink question - VK
 def PinkQuestion(question_number):
     # Global score variable
     global score
