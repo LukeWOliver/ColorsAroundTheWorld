@@ -1,5 +1,8 @@
 """
 Luke Oliver & Vighnesh Koikal 10/13/23      
+This program aims to help break language barriers by providing a way
+to engage young students in learning new languages.
+
 This is the main script which controls which langauge module is engaged
 using a function and function calls
 """
