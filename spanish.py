@@ -14,7 +14,8 @@ os = sys.platform
 
 def Spanish():
     ### --- Setup --- ### - VK
-    questions = [BlueQuestion, RedQuestion, GreenQuestion, YellowQuestion, PurpleQuestion, BrownQuestion, OrangeQuestion, BlackQuestion, WhiteQuestion, PinkQuestion]
+    questions = [BlueQuestion, RedQuestion, GreenQuestion, YellowQuestion, PurpleQuestion, 
+                 BrownQuestion, OrangeQuestion, BlackQuestion, WhiteQuestion, PinkQuestion]
     run = True
     retake = ""
     
