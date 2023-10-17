@@ -2,11 +2,11 @@
 
 import random, subprocess, sys
 
-#Global Variables
+#Global Variables FB
 score = 0
 missed_questions =[]
 
-# Get user's operating system
+# Get user's operating system LM
 os = sys.platform
 
 def French():
@@ -18,7 +18,7 @@ def French():
     global missed_questions
 
     
-##Input/Question ##
+##Input/Question ## FB
     print("You have reached the french section. \n")
     input("Colors in French are a bit diffent than the ones in English. Press ENTER to countine")
     print("Many colors have direct translation, examples being: ")
@@ -39,7 +39,7 @@ def French():
     ### Qiuz Loop ###  
     while Run:
         
-        # Clear terminal (dependant on user's operating system) so that the user cannot cheat
+        # Clear terminal (dependant on user's operating system) so that the user cannot cheat LM
         print("You have reached the french section, try your best to translate the following words")
         input("Please press enter when you are ready to start the quiz")
         if os == "win32":
@@ -47,43 +47,44 @@ def French():
         elif os == "darwin" or os == "linux":
             subprocess.run('clear', shell= True)
         
-        #Reset score when questions are missed
+        #Reset score when questions are missed FB
         missed_questions = []
         score = 0
         
-        #Give user character info
+        #Give user character info FB
         print("Note that special symbols are not available and should not be considered for this test")
         
-        ### Shuffel the order of questions ###
+        ### Shuffel the order of questions ### FB
         random.shuffle(questions)
         
-        #Ask each question in order of the list
+        #Ask each question in order of the list FB
         for question in range(len(questions)):
             questions[question](question + 1)
             
-        #print final score
+        #print final score FB
         print("Your final score was.." + str(score) + "/10" )
         
-        #print missed questions
+        #print missed questions LM
         if score < 10:
             print("\nYou missed the following questions: ")
             for missed_question in range(len(missed_questions)):
                 print(str(missed_questions[missed_question]))
                 
-        # Ask the user if they would like to retake the quiz, and break
-        # the main loop if they would not like to retake
+        # Ask the user if they would like to retake the quiz, and break FB
+        # the main loop if they would not like to retake FB
         retake = str(input("\nWould you like to retake the quiz? ")).lower()
         if retake == "yes" or retake == "y" :
             continue
         else:
             run = False
 
+#FB
 def BlueQ(question_number):
     # Global score variable
     global score
     global missed_questions
     
-    #Predetermined answer
+    #Predetermined answer 
     blue_answer = "blue"
     
     # Print question and obtain user input (answer)
@@ -98,7 +99,8 @@ def BlueQ(question_number):
         
     # Create whitespace
     print()
-    
+   
+#LM 
 def RedQ(question_number):
     # Global score variable
     global score
@@ -116,7 +118,8 @@ def RedQ(question_number):
         score += 1
     else:
         missed_questions.append(question_number)
-
+        
+#LM
 def GreenQ(question_number):
     # Global score variable
     global score
@@ -137,6 +140,8 @@ def GreenQ(question_number):
         
     # Create whitespace
     print()
+    
+#LM
 def PurpleQ(question_number):
     # Global score variable
     global score
@@ -159,6 +164,7 @@ def PurpleQ(question_number):
     # Create whitespace
     print()
     
+#LM
 def BrownQ(question_number):
     # Global score variable
     global score
@@ -184,6 +190,8 @@ def BrownQ(question_number):
         
     # Create whitespace
     print()
+    
+#LM
 def OrangeQ(question_number):
     # Global score variable
     global score
@@ -209,7 +217,8 @@ def OrangeQ(question_number):
         
     # Create whitespace
     print()
-    
+
+#LM
 def BlackQ(question_number):
     # Global score variable
     global score
@@ -235,6 +244,8 @@ def BlackQ(question_number):
         
     # Create whitespace
     print()
+    
+#LM
 def WhiteQ(question_number):
     # Global score variable
     global score
@@ -256,6 +267,8 @@ def WhiteQ(question_number):
         
     # Create whitespace
     print()
+    
+#LM
 def PinkQ(question_number):
     # Global score variable
     global score
@@ -280,6 +293,8 @@ def PinkQ(question_number):
         missed_questions.append(question_number)
     # Create whitespace
     print()
+    
+#LM
 def GreyQ(question_number):
     # Global score variable
     global score
@@ -301,4 +316,3 @@ def GreyQ(question_number):
         
     # Create whitespace
     print()
-    
