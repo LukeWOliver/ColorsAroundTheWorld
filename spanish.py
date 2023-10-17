@@ -66,7 +66,7 @@ def Spanish():
         # Shuffle the order of questions - LWO
         random.shuffle(questions)
         
-        # Ask each question in the order of the shuffled list by itterating 
+        # Ask each question in the order of the shuffled list by iterating 
         # through the list (which contains function names) and calling the
         # function based on the index of the list and the iteration - LWO
         for question in range(len(questions)):
